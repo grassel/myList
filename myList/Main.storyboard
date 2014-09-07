@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rgg-Q7-rUs">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping List-->
+        <scene sceneID="WJv-o3-3ug">
+            <objects>
+                <tableViewController id="Rko-5b-R76" customClass="ListTableViewController" customModule="myList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6K3-Gn-KoF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rFv-zW-5wo">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rFv-zW-5wo" id="sZo-LZ-cZA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rko-5b-R76" id="oGJ-uG-JiF"/>
+                            <outlet property="delegate" destination="Rko-5b-R76" id="yrl-dU-Q8R"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shopping List" id="xhS-3d-Lll">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="REw-DE-wt4">
+                            <connections>
+                                <segue destination="fjQ-fC-wwF" kind="push" id="FyS-w9-mol"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCI-Sh-E4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="390"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="jEH-hC-A9Q">
+            <objects>
+                <viewController id="fjQ-fC-wwF" customClass="ItemViewController" customModule="myList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="181-PT-mpE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZMt-6R-rSU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u0s-Cb-1WY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-in-UdK">
+                                <rect key="frame" x="8" y="96" width="576" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TL6-zG-us5">
+                                <rect key="frame" x="8" y="142" width="576" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="More information" minimumFontSize="17" background=" " translatesAutoresizingMaskIntoConstraints="NO" id="rbk-Ti-zaN">
+                                <rect key="frame" x="8" y="186" width="576" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Item" id="83c-lj-gVb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="O1a-Q7-bUF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="prT-Tg-KsU">
+                            <connections>
+                                <action selector="saveTabbed:" destination="fjQ-fC-wwF" id="ZRr-oR-0vQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoTextField" destination="rbk-Ti-zaN" id="sMh-gq-Pnd"/>
+                        <outlet property="itemNameTextField" destination="Ctk-in-UdK" id="yIm-bc-Zzg"/>
+                        <outlet property="quantityTextField" destination="TL6-zG-us5" id="NYk-ZP-RCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kby-Of-Eqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652" y="390"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EVw-h5-yeq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rgg-Q7-rUs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FXi-sG-Gmr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rko-5b-R76" kind="relationship" relationship="rootViewController" id="qez-Hb-D5B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ks-ID-gj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="390"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name=" " width="16" height="16"/>
+    </resources>
+</document>

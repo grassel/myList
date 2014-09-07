@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		C5EF9DC919BCD922007BA2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DC819BCD922007BA2BD /* AppDelegate.swift */; };
 		C5EF9DCC19BCD922007BA2BD /* myList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DCA19BCD922007BA2BD /* myList.xcdatamodeld */; };
-		C5EF9DCE19BCD922007BA2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DCD19BCD922007BA2BD /* ViewController.swift */; };
-		C5EF9DD119BCD922007BA2BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EF9DCF19BCD922007BA2BD /* Main.storyboard */; };
 		C5EF9DD319BCD922007BA2BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5EF9DD219BCD922007BA2BD /* Images.xcassets */; };
 		C5EF9DDF19BCD922007BA2BD /* myListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DDE19BCD922007BA2BD /* myListTests.swift */; };
+		C5EF9DE919BCD997007BA2BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EF9DE819BCD997007BA2BD /* Main.storyboard */; };
+		C5EF9DEB19BCDCE9007BA2BD /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DEA19BCDCE9007BA2BD /* ListTableViewController.swift */; };
+		C5EF9DED19BCDD4E007BA2BD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DEC19BCDD4E007BA2BD /* ItemViewController.swift */; };
+		C5EF9DEF19BCDDC1007BA2BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF9DEE19BCDDC1007BA2BD /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +32,14 @@
 		C5EF9DC719BCD922007BA2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5EF9DC819BCD922007BA2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5EF9DCB19BCD922007BA2BD /* myList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myList.xcdatamodel; sourceTree = "<group>"; };
-		C5EF9DCD19BCD922007BA2BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C5EF9DD019BCD922007BA2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5EF9DD219BCD922007BA2BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5EF9DD819BCD922007BA2BD /* myListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EF9DDD19BCD922007BA2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5EF9DDE19BCD922007BA2BD /* myListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myListTests.swift; sourceTree = "<group>"; };
+		C5EF9DE819BCD997007BA2BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C5EF9DEA19BCDCE9007BA2BD /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		C5EF9DEC19BCDD4E007BA2BD /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		C5EF9DEE19BCDDC1007BA2BD /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				C5EF9DC819BCD922007BA2BD /* AppDelegate.swift */,
-				C5EF9DCD19BCD922007BA2BD /* ViewController.swift */,
-				C5EF9DCF19BCD922007BA2BD /* Main.storyboard */,
+				C5EF9DEE19BCDDC1007BA2BD /* Model.swift */,
+				C5EF9DEC19BCDD4E007BA2BD /* ItemViewController.swift */,
+				C5EF9DEA19BCDCE9007BA2BD /* ListTableViewController.swift */,
 				C5EF9DD219BCD922007BA2BD /* Images.xcassets */,
 				C5EF9DCA19BCD922007BA2BD /* myList.xcdatamodeld */,
 				C5EF9DC619BCD922007BA2BD /* Supporting Files */,
+				C5EF9DE819BCD997007BA2BD /* Main.storyboard */,
 			);
 			path = myList;
 			sourceTree = "<group>";
@@ -192,8 +198,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5EF9DD119BCD922007BA2BD /* Main.storyboard in Resources */,
 				C5EF9DD319BCD922007BA2BD /* Images.xcassets in Resources */,
+				C5EF9DE919BCD997007BA2BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5EF9DCE19BCD922007BA2BD /* ViewController.swift in Sources */,
+				C5EF9DEF19BCDDC1007BA2BD /* Model.swift in Sources */,
+				C5EF9DEB19BCDCE9007BA2BD /* ListTableViewController.swift in Sources */,
+				C5EF9DED19BCDD4E007BA2BD /* ItemViewController.swift in Sources */,
 				C5EF9DC919BCD922007BA2BD /* AppDelegate.swift in Sources */,
 				C5EF9DCC19BCD922007BA2BD /* myList.xcdatamodeld in Sources */,
 			);
@@ -234,17 +242,6 @@
 			targetProxy = C5EF9DD919BCD922007BA2BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C5EF9DCF19BCD922007BA2BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5EF9DD019BCD922007BA2BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C5EF9DE019BCD922007BA2BD /* Debug */ = {
