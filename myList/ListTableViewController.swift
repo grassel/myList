@@ -1,10 +1,23 @@
 
 import UIKit
+import CoreData
 
 class ListTableViewController: UITableViewController {
 
+    var myList : Array<AnyObject> = []
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
+        let context : NSManagedObjectContext = appDel.managedObjectContext!;
+        let freq = NSFetchRequest(entityName: "List");
+        
+        myList = context.executeFetchRequest(freq, error: nil)!
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -17,24 +30,27 @@ class ListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return myList.count;
     }
 
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
+        
+        // configure the cell.
+        let CellID : NSString = "Cell"; // match what's been defined in the storyboard.
+        var cell : UITableViewCell = tableView?.dequeueReusableCellWithIdentifier(CellID) as UITableViewCell;
+        
+        if let ip = indexPath {
+            var data : NSManagedObject = myList[ip.row] as NSManagedObject;
+            cell.textLabel?.text = data.valueForKey("item") as String;
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
