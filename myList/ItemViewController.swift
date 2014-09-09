@@ -45,18 +45,28 @@ class ItemViewController: UIViewController {
         let context : NSManagedObjectContext = appDel.managedObjectContext!
         let en = NSEntityDescription.entityForName("List", inManagedObjectContext: context)
         
-        // create instance of pur data model and initialize
-        var newItem = Model(entity: en!, insertIntoManagedObjectContext: context)
+        // check if item exists
+        if existingItem != nil {
+            existingItem.setValue(itemNameTextField.text, forKey: "item");
+            existingItem.setValue(quantityTextField.text, forKey: "quantity");
+            existingItem.setValue(infoTextField.text, forKey: "info");
+            
+            println("existing item saved: \(existingItem)");
+        } else {
+            // create instance of pur data model and initialize
+            var newItem = Model(entity: en!, insertIntoManagedObjectContext: context)
         
-        // map properties
-        newItem.item = itemNameTextField.text
-        newItem.quantity = quantityTextField.text
-        newItem.info = infoTextField.text
+            // map properties
+            newItem.item = itemNameTextField.text
+            newItem.quantity = quantityTextField.text
+            newItem.info = infoTextField.text
+
+            println("new item saved: \(newItem)");
+        }
         
         // save context
         context.save(nil) // no error handling
         
-        println("new item saved: \(newItem)");
         
         // navigate back to root view controller
         self.navigationController?.popToRootViewControllerAnimated(true)

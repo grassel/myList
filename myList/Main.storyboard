@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rgg-Q7-rUs">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
@@ -45,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Shopping List" id="xhS-3d-Lll">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="REw-DE-wt4">
                             <connections>
-                                <segue destination="fjQ-fC-wwF" kind="push" id="FyS-w9-mol"/>
+                                <segue destination="fjQ-fC-wwF" kind="push" identifier="createNewItem" id="FyS-w9-mol"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -128,6 +129,6 @@
         <image name=" " width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4KM-ws-HYL"/>
+        <segue reference="FyS-w9-mol"/>
     </inferredMetricsTieBreakers>
 </document>
