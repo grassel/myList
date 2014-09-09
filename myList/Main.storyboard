@@ -89,7 +89,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Item" id="83c-lj-gVb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="O1a-Q7-bUF"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="O1a-Q7-bUF">
+                            <connections>
+                                <action selector="cancelTapped:" destination="fjQ-fC-wwF" id="98Q-II-Exd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="prT-Tg-KsU">
                             <connections>
                                 <action selector="saveTabbed:" destination="fjQ-fC-wwF" id="ZRr-oR-0vQ"/>

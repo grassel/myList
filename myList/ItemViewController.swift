@@ -72,4 +72,10 @@ class ItemViewController: UIViewController {
         self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
+    
+    @IBAction func cancelTapped(sender: AnyObject) {
+        // navigate back to root view controller
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
 }
