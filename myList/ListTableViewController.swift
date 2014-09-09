@@ -20,6 +20,19 @@ class ListTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "update") {
+            var index = self.tableView.indexPathForSelectedRow()?.row;
+            var selectedItem : NSManagedObject = myList[index!] as NSManagedObject
+            
+            let IVC : ItemViewController = segue.destinationViewController as ItemViewController
+            IVC.item = selectedItem.valueForKey("item") as String;
+            IVC.quantity = selectedItem.valueForKey("quantity") as String;
+            IVC.info = selectedItem.valueForKey("info") as String;
+            IVC.existingItem = selectedItem
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,7 +60,12 @@ class ListTableViewController: UITableViewController {
         
         if let ip = indexPath {
             var data : NSManagedObject = myList[ip.row] as NSManagedObject;
-            cell.textLabel?.text = data.valueForKey("item") as String;
+            cell.textLabel?.text = data.valueForKey("item") as? String;
+            
+            var qnt = data.valueForKey("quantity") as String;
+            var info = data.valueForKey("info") as String;
+            var details : String = "\(qnt) item/s - \(info)";
+            cell.detailTextLabel?.text = details;
         }
         return cell
     }

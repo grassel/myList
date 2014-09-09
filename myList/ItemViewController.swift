@@ -15,10 +15,20 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var infoTextField: UITextField!
     
+    // properties used to move data access from the ListTabletViewController
+    var item : String = "";
+    var quantity : String = ""
+    var info : String = ""
+    var existingItem : NSManagedObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if existingItem != nil {
+            itemNameTextField.text = item;
+            quantityTextField.text = quantity
+            infoTextField.text = info
+        }
     }
 
     override func didReceiveMemoryWarning() {
